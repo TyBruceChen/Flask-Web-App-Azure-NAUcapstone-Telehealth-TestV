@@ -39,7 +39,8 @@ with app.test_request_context():
     print(url_for('temp',var='Hello'))
     url_for('static',filename = 'files/Bart-Philip-me.png')
 '''
-app.run()
+if __name__ == '__main__':
+    app.run()
 
 
 
