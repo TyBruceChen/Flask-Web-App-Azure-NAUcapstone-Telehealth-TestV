@@ -39,7 +39,7 @@ with app.test_request_context():
     print(url_for('temp',var='Hello'))
     url_for('static',filename = 'files/Bart-Philip-me.png')
 '''
-app.run(host = '0.0.0.0',port = os.getenv('PORT',80))
+app.run()
 
 
 
