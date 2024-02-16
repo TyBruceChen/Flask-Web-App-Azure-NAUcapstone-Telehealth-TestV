@@ -1,0 +1,95 @@
+<!DOCTYPE html> 
+<html>
+<head> 
+    <title>signup-homework3-Tianyi</title>
+    <meta charset="utf-8">
+    <meta name="keywords" content="CS212 NAU homework3, Tianyi Chen">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head> 
+
+<body>
+    <header>
+        <!-- <nav>
+            <ul>
+                <li><a href="../signup/index.html">Signup</a></li>
+                <li><a href="../login/index.html">Login</a></li>
+                <li><a href="../feedback/index.html">Feedback</a></li>
+            </ul>
+        </nav>
+        <h2>Signup Page (CS212 NAU HW3)</h2> -->
+    </header>
+
+    <main>
+
+        <form action="../login/index.html" method="get">
+            <section id="basic information">
+                <h4>Basic Information</h4>
+
+                <label for="name">Name:</label>
+                <input type="text" name="name" id="name" placeholder="Enter your full name plz" required>
+                <br><br>
+
+                <label for="email">Email:</label>
+                <input type="email" name="email" id="email" required>
+                <br><br>
+
+                <div class="extra-gender">
+                    <label for="gender">Gender :</label>
+
+                    <label for="male">Male</label>
+                    <input type="radio" name="gender" id="male">
+
+                    <label for="female">Female</label>
+                    <input type="radio" name="gender" id="female">
+
+                    <label for="others">Others</label>
+                    <input type="radio" name="gender" id="others">
+                </div>
+                <br>
+                
+                <label for="password">Password:</label>
+                <input type="password" name="password" id="password" required>
+                <br><br>
+
+                <div class="Dropdown Selections">
+                    <label for="profession">Profession:</label>
+                    <select name="profession" id="profession" required>
+                        <option value="student">Student</option>
+                        <option value="working-professional">Working Professional</option>
+                        <option value="professor">Professor</option>
+                    </select>
+                    <br><br>
+                </div>
+            </section>
+
+            <section id="extra information">
+                <h4>Extra Inforamtion</h4>
+
+                <label for="linkedin-url">LinkedIn URL:</label>
+                <input type="url" name="linkedin-url" id="linkedin-url" required>
+                <br><br>
+                
+                <label for="subscribe">Agree Subscription to <a href="https://en.wikipedia.org/wiki/Newsletter#:~:text=A%20newsletter%20is%20a%20printed,of%20interest%20to%20its%20recipients.">Newsletter</a></label>
+                <input type="checkbox" name="subscribe" id="subscribe">
+            </section>
+            <br><br>
+
+            <input type="submit" value="SUBMIT">
+        </form>
+        <br><br>
+
+        <form action="/hello/" method="post" enctype="multipart/form-data">
+            <label for="pic">Profile Picture: </label>      
+            <input type="file" name="pic" id="pic">
+            <br><br>
+
+            <input type="submit" value="Upload">
+        </form>        
+
+    </main>
+
+    <footer>
+        <h6>Author: Tianyi Chen</h6>
+    </footer>
+</body>
+</html>
