@@ -17,20 +17,21 @@ def hello_world():
 def temp(var):
     return var
 #url_for('hello_world',verbose = 1)
-@app.route('/hello/',methods = ['GET','POST'])
+@app.route('/',methods = ['GET','POST'])
 def file_handle():
     file_name = 'downloads/temp.png'
-    wait_time = 3  #let the thread to run 10s
+    #wait_time = 0  #let the thread to run 10s
     if request.method == 'POST':
         print(request.files)
         if 'pic' in request.files:
             f = request.files['pic']
-            f.save(file_name)
-            img = Image.open(file_name)
-            img.show()
-            start_time = time.time()
-            while start_time-time.time() <= wait_time:
-                continue
+            try:
+                f.save(file_name)
+                img = Image.open(file_name)
+                img.show()
+            except:
+                pass
+            #start_time = time.time()
     return render_template('/index.html', name = None)
 
 '''
