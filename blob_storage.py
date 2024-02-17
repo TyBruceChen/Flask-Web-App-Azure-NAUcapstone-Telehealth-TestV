@@ -23,16 +23,3 @@ def file_storage_blob(bin_file,filename):
     except:
         print('Blob Upload Failure.')
     
-"""
-if __name__ == '__main__':
-    try:
-        print("Test packages are successfully imported.")
-
-    except Exception as ex:
-        print('Exception:')
-        print(ex)
-    test_file_path = 'files/Bart-Philip-me.png'
-    storage_path = 'temp1.png'
-    with open(test_file_path,'rb') as bin_file:
-        file_storage_blob(bin_file, storage_path)
-"""
