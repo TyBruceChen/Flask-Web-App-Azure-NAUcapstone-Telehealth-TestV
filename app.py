@@ -6,7 +6,7 @@ import time
 import random
 
 
-temp_img_path = 'temp_imgs'
+temp_img_path = '/home/site/temp_imgs'
 app = Flask(__name__)
 if os.path.exists(temp_img_path) != True:
         os.mkdir(temp_img_path)
