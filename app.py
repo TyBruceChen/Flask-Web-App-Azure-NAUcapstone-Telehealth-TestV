@@ -1,17 +1,14 @@
 from flask import Flask,url_for,render_template,request
 from PIL import Image
+from blob_storage import *
 import os
 import time
+import random
 
 
-
+temp_img_path = 'temp_imgs'
 app = Flask(__name__)
-"""
-@app.route('/hello/')    #returns a response once URL/hello is requested
-def hello_world():
-#    print(verbose)
-    return render_template('index.html',name = None)
-"""
+
 
 @app.route('/temp/<var>')
 def temp(var):
@@ -19,55 +16,33 @@ def temp(var):
 #url_for('hello_world',verbose = 1)
 @app.route('/',methods = ['GET','POST'])
 def file_handle():
-    file_name = 'downloads/temp.png'
     #wait_time = 0  #let the thread to run 10s
     if request.method == 'POST':
         print(request.files)
         if 'pic' in request.files:
-            f = request.files['pic']
+            file = request.files['pic']
             try:
-                f.save(file_name)
-                img = Image.open(file_name)
-                img.show()
+                upload_name = file.filename
+                print(upload_name) #see the name of uploaded file
+                upload_name = upload_name.split('.')[0]
+
+                img_name = str(upload_name) + str(int(random.random()*1000)) + '.png'
+                file_name = os.path.join( temp_img_path, img_name)    #temperaryly save the img on local
+                file.save(file_name)
+                
+                with open(file_name,'rb') as bin_file:
+                    file_storage_blob(bin_file = bin_file, filename = img_name)
+                print('Upload Finish.')
             except:
                 pass
+                print('Error!')
             #start_time = time.time()
     return render_template('/index.html', name = None)
 
-'''
-with app.test_request_context():
-    print(url_for('temp',var='Hello'))
-    url_for('static',filename = 'files/Bart-Philip-me.png')
-'''
+
 if __name__ == '__main__':
+    if os.path.exists(temp_img_path) != True:
+        os.mkdir(temp_img_path)
     app.run()
 
 
-
-
-"""
-def create_app(test_config = None):
-    app = Flask(__name__,instance_relative_config = True)
-    app.config.from_mapping(
-        SECRET_KEY = 'dev',
-        DATABASE = os.path.join(app.instance_path,'Flask.sqlite'),
-    )
-
-    if test_config is None:
-        #load the instance config
-        app.config.from_pyfile('config.py',silent = True)
-    else:
-        #load the test config
-        app.config.from_mapping(test_config)
-
-    try:
-        os.makedirs(app.instance_path)
-    except OSError:
-        pass
-    
-    @app.route('/hello')    #handle response to URL/hello
-    def hello():
-        return 'Hello, World!'
-    
-    return app
-"""
