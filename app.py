@@ -6,7 +6,7 @@ import time
 import random
 
 
-temp_img_path = '/home/site/temp_imgs'
+temp_img_path = ''
 app = Flask(__name__)
 try:
     if os.path.exists(temp_img_path) != True:
@@ -33,10 +33,7 @@ def file_handle():
                 img_name = str(upload_name) + str(int(random.random()*1000)) + '.png'
                 file_name = os.path.join( temp_img_path,img_name)    #temperaryly save the img on local
                 file.save(file_name)
-                
-                with open(file_name,'rb') as bin_file:
-                    file_storage_blob(bin_file = bin_file, filename = file_name)
-                print('Upload Finish.')
+               
             except:
                 pass
                 print('Error!')
