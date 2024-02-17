@@ -8,9 +8,11 @@ import random
 
 temp_img_path = '/home/site/temp_imgs'
 app = Flask(__name__)
-if os.path.exists(temp_img_path) != True:
+try:
+    if os.path.exists(temp_img_path) != True:
         os.mkdir(temp_img_path)
-
+except:
+    pass
 
 @app.route('/temp/<var>')
 def temp(var):
