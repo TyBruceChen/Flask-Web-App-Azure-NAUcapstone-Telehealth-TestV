@@ -31,11 +31,11 @@ def file_handle():
                 img_name = str(upload_name) + str(int(random.random()*1000)) + '.png'
                 file_name = os.path.join( temp_img_path,img_name)    #temperaryly save the img on local
                 file.save(file_name)
-                """ # the initial idea is to save the file then read as binary type
+                # the initial idea is to save the file then read as binary type
                 with open(file_name,'rb') as bin_file:
-                    file_storage_blob(bin_file = bin_file, filename = file_name)
-                """
-                file_storage_blob(bin_file = file.read(), filename = img_name)
+                    file_storage_blob(bin_file = bin_file, filename = img_name)
+                
+                #file_storage_blob(bin_file = file.read(), filename = img_name)
                 print('Upload Finish.')
             except:
                 pass
