@@ -6,7 +6,8 @@ import time
 import random
 
 
-temp_img_path = '/home/site/temp_imgs'
+#temp_img_path = 'temp_imgs'
+temp_img_path = 'home/site/temp_imgs'   #when it's uploaded to Azure server.
 app = Flask(__name__)
 if os.path.exists(temp_img_path) != True:
         os.mkdir(temp_img_path)
@@ -15,7 +16,7 @@ if os.path.exists(temp_img_path) != True:
 @app.route('/temp/<var>')
 def temp(var):
     return var
-#url_for('hello_world',verbose = 1)
+
 @app.route('/',methods = ['GET','POST'])
 def file_handle():
     #wait_time = 0  #let the thread to run 10s
@@ -34,13 +35,15 @@ def file_handle():
                 # the initial idea is to save the file then read as binary type
                 with open(file_name,'rb') as bin_file:
                     file_storage_blob(bin_file = bin_file, filename = img_name)
-                
-                #file_storage_blob(bin_file = file.read(), filename = img_name)
                 print('Upload Finish.')
+                try:
+                    os.remove(file_name)
+                    print('Server File deleted.')
+                except:
+                    print('Fail to delete server file!')
             except:
                 pass
-                print('Error!')
-            #start_time = time.time()
+                print('Error!')           
     return render_template('/index.html', name = None)
 
 
