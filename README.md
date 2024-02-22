@@ -4,7 +4,7 @@
   * [Build Server with Flask Python](https://github.com/TyBruceChen/Telehealth-NAU/tree/main#build-server-with-flask-python)
   * [Deployment through Github Actions Workflow](https://github.com/TyBruceChen/Telehealth-NAU/tree/main#deployment-through-github-actions-workflow)
   * [Server Management and Verification](https://github.com/TyBruceChen/Telehealth-NAU/tree/main#server-management-and-verification)
-  * [Detailed Programming Strategies](https://github.com/TyBruceChen/Telehealth-NAU/tree/main#detailed-programming-strategies)
+* [Detailed Programming Strategies](https://github.com/TyBruceChen/Telehealth-NAU/tree/main#detailed-programming-strategies)
 ## Introduction:
 This is an **EXPERIMENT** web app project to let user use our COVID-19 detection service remotely. For more information, please visit our capstone page: https://sites.google.com/nau.edu/ai-telehealth/home.
 
@@ -76,7 +76,12 @@ To see how your server manages files, find the Development Tools -> Advanced Too
 ![Azure Console](https://github.com/TyBruceChen/Telehealth-NAU/blob/main/explanation/Azure%20Web%20Server%20Console.png) <br>
 The deployed files are under ```/home/site/```. To *temporarily* store at the server (free plan only has 1GB space!), my suggection is to specify the absolute path, like this: ```/home/site/wwwroot/temp_fold```.
 
-#### Detailed Programming strategies
+## Detailed Programming strategies
+Programming on VS Code (mac OS):
+Create the virtual environment (venv) in terminal: ```python3 -m env venv_path```. <br>
+Activate the virtual environment in terminal: ```source venv_path/bin/activate```. <br>
+Set your interpreter: ```cmd+shift+P``` -> ```python interpreter```. <br>
+
 Guide to new page and Handle <form> uploaded files:
 ```
 from flask import Flask,url_for,render_template,request
