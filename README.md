@@ -1,4 +1,4 @@
-# Telehealth-NAU
+# Telehealth-NAU (Just for implementation test)
 * [Introduction](https://github.com/TyBruceChen/Telehealth-NAU/tree/main#introduction)
 * [Implementation](https://github.com/TyBruceChen/Telehealth-NAU/tree/main#implementaion)
   * [Build Server with Flask Python](https://github.com/TyBruceChen/Telehealth-NAU/tree/main#build-server-with-flask-python)
