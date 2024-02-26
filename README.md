@@ -10,6 +10,7 @@ This is an **EXPERIMENT** web app project to let user use our COVID-19 detection
 
 There will be no our classification model to be presented here. And this is a tutorial of holding a web app on Azure Web App service server that can process user's request.
 
+For my project, this Azure solution is *aborted* since its free plan cannot support loading my ViT model. My executable solution is to run it on local server, expose it through frp, and publish and handle public Internet request through Amazon EC2. To use our service, please visit [here](http://ec2-3-144-74-6.us-east-2.compute.amazonaws.com:8000/) (currently in testing). 
 
 ## Implementaion:
 #### Build Server with Flask Python
