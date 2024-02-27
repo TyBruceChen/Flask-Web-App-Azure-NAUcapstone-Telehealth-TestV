@@ -10,7 +10,7 @@ This is an **EXPERIMENT** web app project to let user use our COVID-19 detection
 
 There will be no our classification model to be presented here. And this is a tutorial of holding a web app on Azure Web App service server that can process user's request.
 
-For my project, this Azure solution is *aborted* since its free plan cannot support loading my ViT model. My executable solution is to run it on local server, expose it through frp, and publish and handle public Internet request through Amazon EC2. To use our service, please visit [here](http://ec2-3-144-74-6.us-east-2.compute.amazonaws.com:8000/) (currently in testing). 
+For my project, this Azure solution is *aborted* since its free plan cannot support loading my ViT model. My executable solution is to run it on local server, expose it through frp, and publish and handle public Internet request through Amazon EC2. To use our service, please visit [here](http://ec2-3-144-74-6.us-east-2.compute.amazonaws.com:8000/) (currently in testing). The excutable edition of Flask server implemented on Azure is *V0.3* (see branches), which can just handle requests.
 
 ## Implementaion:
 #### Build Server with Flask Python
@@ -105,3 +105,5 @@ For the corresponding form element in html page:
 ```
 The post method method should be POST, the encryption method should be multipart/form-data and the input element id should corresponds to request.file[] in python file so that it can be detected.
 The page that is loaded (here is once '/directory' accessed by user), should be store at the specific folder: ```/templates```. The static local files (like css, images, etc) that is linked by html page should be stored under ```static```.
+
+To identify the uploaded file from user, the ```request.files[id]``` should be the *same* as ```id``` of ```input type='file'```.
