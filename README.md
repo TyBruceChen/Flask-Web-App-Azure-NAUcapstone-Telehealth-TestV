@@ -80,7 +80,7 @@ The deployed files are under ```/home/site/```. To *temporarily* store at the se
 
 ## Detailed Programming strategies
 Programming on VS Code (mac OS):
-Create the virtual environment (venv) in terminal: ```python3 -m env venv_path```. <br>
+Create the virtual environment (venv) in terminal: ```python3 -m venv venv_path```. <br>
 Activate the virtual environment in the terminal: ```source venv_path/bin/activate```. <br>
 Set your interpreter: ```cmd+shift+P``` -> ```python interpreter```. <br>
 
